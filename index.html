@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,10 +18,14 @@
         h1 {
             position: absolute;
             top: 45%;
-            width: 100%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            margin: 0;
             text-align: center;
             color: white;
             font-size: 42px;
+            line-height: 1.3;
             text-shadow:
                 0 0 5px white,
                 0 0 10px white,
@@ -35,6 +40,7 @@
             animation: aparecer var(--duracion) ease-in-out forwards;
             z-index: 2;
             user-select: none;
+            pointer-events: none;
         }
 
         @keyframes aparecer {
@@ -56,16 +62,32 @@
                 opacity: 0;
             }
         }
+
+        @media (max-width: 600px) {
+            h1 {
+                width: 85%;
+                font-size: 25px;
+                line-height: 1.4;
+                top: 48%;
+                text-shadow:
+                    0 0 4px white,
+                    0 0 8px white,
+                    0 0 15px #ff80ab,
+                    0 0 20px #ff4081;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <h1>Hola Yatsuri como estas te saluda tu buen amigo bell
-    no quieres contarme otro chisme por ay</h1>
+    <h1>
+        Hola Yatsuri, ¿cómo estás?<br>
+        Te saluda tu buen amigo Bell.<br>
+        ¿No quieres contarme otro chisme por ahí? 😄
+    </h1>
 
     <script>
-
         function crearElemento() {
 
             const elemento = document.createElement("div");
@@ -115,8 +137,8 @@
         }
 
         setInterval(crearElemento, 100);
-
     </script>
 
 </body>
 </html>
+```
